@@ -49,10 +49,14 @@ public class DecisionBasedCalculator
                 System.out.println("Number out of range.");
             }
 
-            if (operation.equals("/") && secondNum == 0) //Checking if division by zero 
+            if (operation.equals("/")) 
             {
-                System.out.println("Error, cannot divide by zero");
-                continue;
+                while (secondNum == 0) 
+                {
+                System.out.println("Error, cannot divide by zero.");
+                System.out.print("Enter second number (non-zero), from -1000 to 1000: ");
+                secondNum = getValidNumber(scanner);
+                }
             }
 
             double result;
